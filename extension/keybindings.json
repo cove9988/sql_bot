@@ -1,0 +1,7 @@
+[
+    {
+      "key": "ctrl+shfit+l",  // The desired keybinding
+      "command": "extension.sql_bot"  
+    }
+  ]
+  
