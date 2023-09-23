@@ -1,12 +1,16 @@
 const vscode = require('vscode');
 const sqlFormatter = require('sql-formatter');
+console.log('SQL Bot command invoked');  
 
 function sqlBot() { // Keep "sqlBot" as the function name
-    console.log('SQL Bot command invoked');  
+    
     const editor = vscode.window.activeTextEditor;
     if (editor) {
         const text = editor.document.getText();
-        const beautifiedSql = sqlFormatter.format(text, { language: 'sql' });
+        const parsedSql = sqlParser.parse(text);
+
+        const modifiedSql = sqlParser.stringify(parsedSql).toUpperCase();
+        const beautifiedSql = sqlFormatter.format(modifiedSql, { language: 'sql' });
 
         editor.edit((editBuilder) => {
             const start = new vscode.Position(0, 0);
