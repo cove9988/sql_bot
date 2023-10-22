@@ -1,6 +1,6 @@
 {
   "name": "sql-bot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SQL Beautifier Extension for Visual Studio Code",
   "main": "extension/sql_bot.js",
   "scripts": {
@@ -12,12 +12,19 @@
         "command": "extension.sql_bot",
         "title": "SQL Bot"
       }
-    ]
+    ],
+    "extensionDependencies": [
+      "./.vscode/keybindings.json"
+    ]  
+  },
+  "repository": {
+    "url": "https://github/cove9988/sql_bot"
   },
   "keywords": [],
   "author": "paulg",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "node-sql-parser": "^4.10.0",
     "prettier": "^3.0.3",
     "sql-formatter": "^13.0.0"
   },
@@ -29,6 +36,6 @@
   },
   "activationEvents": [
     "onStartup",
-    "onCommand:extension.sql_bot"  
+    "onCommand:extension.sql_bot"
   ]
 }
